@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEXUS // Virtual Internet</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+
+    <div class="stars"></div>
+    <div class="grid"></div>
+    <div class="scanlines"></div>
+
+
+    <!-- =========================
+         LOGIN
+    ========================== -->
+
+    <section id="loginScreen">
+
+        <div class="login-box">
+
+            <div class="nexus-symbol">
+                ◈
+            </div>
+
+            <h1>
+                NEXUS
+            </h1>
+
+            <p class="subtitle">
+                THE DIGITAL NETWORK
+            </p>
+
+            <div class="login-line"></div>
+
+            <label>
+                USERNAME
+            </label>
+
+            <input
+                id="username"
+                type="text"
+                placeholder="Enter identity..."
+                maxlength="20"
+            >
+
+            <button onclick="login()">
+                CONNECT TO NEXUS
+            </button>
+
+            <p class="login-info">
+                SECURE CONNECTION // ENCRYPTED
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         MAIN NEXUS
+    ========================== -->
+
+    <main id="nexus">
+
+        <!-- TOP BAR -->
+
+        <header class="topbar">
+
+            <div class="brand">
+
+                <span>
+                    ◈
+                </span>
+
+                NEXUS
+
+            </div>
+
+
+            <div class="network-status">
+
+                <i></i>
+
+                NETWORK ONLINE
+
+            </div>
+
+
+            <div class="top-user">
+
+                <span id="topUsername">
+                    USER
+                </span>
+
+                <button onclick="logout()">
+                    ⏻
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <button
+                class="nav-btn active"
+                onclick="showPage('home', this)"
+            >
+                <span>⌂</span>
+                Home
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('search', this)"
+            >
+                <span>⌕</span>
+                Search
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('social', this)"
+            >
+                <span>◎</span>
+                Social
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('news', this)"
+            >
+                <span>▤</span>
+                News
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('mail', this)"
+            >
+                <span>✉</span>
+                Mail
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('cloud', this)"
+            >
+                <span>☁</span>
+                Cloud
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('wallet', this)"
+            >
+                <span>◇</span>
+                Wallet
+            </button>
+
+            <button
+                class="nav-btn"
+                onclick="showPage('market', this)"
+            >
+                <span>◫</span>
+                Market
+            </button>
+
+
+            <div class="sidebar-bottom">
+
+                <button
+                    class="nav-btn"
+                    onclick="showPage('settings', this)"
+                >
+                    <span>⚙</span>
+                    Settings
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =========================
+             CONTENT
+        ========================== -->
+
+        <section class="content">
+
+
+            <!-- HOME -->
+
+            <div
+                class="page active"
+                id="home"
+            >
+
+                <div class="hero">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            NEXUS NETWORK // 01
+                        </p>
+
+                        <h2>
+                            Welcome to the
+                            <span>digital world.</span>
+                        </h2>
+
+                        <p class="hero-text">
+                            One network. Infinite possibilities.
+                            Explore the next generation of the internet.
+                        </p>
+
+                    </div>
+
+
+                    <div class="hero-core">
+
+                        <div class="core-ring">
+                            <div>
+                                ◈
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <span>
+                        ⌕
+                    </span>
+
+                    <input
+                        id="globalSearch"
+                        placeholder="Search the NEXUS..."
+                        onkeydown="searchEnter(event)"
+                    >
+
+                    <button onclick="globalSearch()">
+                        SEARCH
+                    </button>
+
+                </div>
+
+
+                <!-- APPS -->
+
+                <h3>
+                    QUICK ACCESS
+                </h3>
+
+                <div class="apps-grid">
+
+                    <button onclick="openApp('search')">
+                        <strong>⌕</strong>
+                        <span>Search</span>
+                        <small>Explore NEXUS</small>
+                    </button>
+
+                    <button onclick="openApp('social')">
+                        <strong>◎</strong>
+                        <span>Social</span>
+                        <small>Connect with people</small>
+                    </button>
+
+                    <button onclick="openApp('news')">
+                        <strong>▤</strong>
+                        <span>News</span>
+                        <small>Latest information</small>
+                    </button>
+
+                    <button onclick="openApp('mail')">
+                        <strong>✉</strong>
+                        <span>Mail</span>
+                        <small>3 unread messages</small>
+                    </button>
+
+                    <button onclick="openApp('cloud')">
+                        <strong>☁</strong>
+                        <span>Cloud</span>
+                        <small>12.4 GB used</small>
+                    </button>
+
+                    <button onclick="openApp('wallet')">
+                        <strong>◇</strong>
+                        <span>Wallet</span>
+                        <small>Digital assets</small>
+                    </button>
+
+                    <button onclick="openApp('market')">
+                        <strong>◫</strong>
+                        <span>Market</span>
+                        <small>Digital marketplace</small>
+                    </button>
+
+                    <button onclick="openApp('settings')">
+                        <strong>⚙</strong>
+                        <span>Settings</span>
+                        <small>Configure NEXUS</small>
+                    </button>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="status-grid">
+
+                    <div class="status-card">
+
+                        <small>
+                            USERS ONLINE
+                        </small>
+
+                        <strong id="onlineUsers">
+                            8,421,937
+                        </strong>
+
+                        <span class="up">
+                            ↑ 2.4%
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-card">
+
+                        <small>
+                            NODES
+                        </small>
+
+                        <strong>
+                            42,891
+                        </strong>
+
+                        <span class="up">
+                            ● STABLE
+                        </span>
+
+                    </div>
+
+
+                    <div class="status-card">
+
+                        <small>
+                            NETWORK LOAD
+                        </small>
+
+                        <strong>
+                            37.4%
+                        </strong>
+
+                        <span>
+                            NORMAL
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEARCH PAGE -->
+
+            <div
+                class="page"
+                id="search"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS SEARCH ENGINE
+                    </p>
+
+                    <h2>
+                        Explore the network.
+                    </h2>
+
+                </div>
+
+
+                <div class="big-search">
+
+                    <input
+                        id="searchInput"
+                        placeholder="Search anything..."
+                        onkeydown="searchPageEnter(event)"
+                    >
+
+                    <button onclick="performSearch()">
+                        ⌕
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="searchResults"
+                    class="search-results"
+                >
+
+                    <div class="empty-state">
+
+                        <span>
+                            ◈
+                        </span>
+
+                        <p>
+                            Search the NEXUS network
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SOCIAL -->
+
+            <div
+                class="page"
+                id="social"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS SOCIAL
+                    </p>
+
+                    <h2>
+                        Your digital community.
+                    </h2>
+
+                </div>
+
+
+                <div class="post-create">
+
+                    <textarea
+                        id="postText"
+                        placeholder="What's happening in your network?"
+                    ></textarea>
+
+                    <button onclick="createPost()">
+                        PUBLISH
+                    </button>
+
+                </div>
+
+
+                <div id="posts">
+
+                    <article class="post">
+
+                        <div class="post-user">
+                            <div class="avatar cyan">
+                                N
+                            </div>
+
+                            <div>
+                                <strong>
+                                    NEXUS Official
+                                </strong>
+
+                                <small>
+                                    @nexus · 2m
+                                </small>
+                            </div>
+                        </div>
+
+                        <p>
+                            Welcome to the next generation
+                            of the digital network. ◈
+                        </p>
+
+                        <div class="post-actions">
+                            ♡ 1.2K
+                            &nbsp;&nbsp;
+                            ◇ 342
+                            &nbsp;&nbsp;
+                            ↗ 89
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWS -->
+
+            <div
+                class="page"
+                id="news"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS NEWS
+                    </p>
+
+                    <h2>
+                        What's happening now.
+                    </h2>
+
+                </div>
+
+
+                <div class="news-grid">
+
+                    <article class="news-card featured">
+
+                        <span>
+                            BREAKING
+                        </span>
+
+                        <h3>
+                            NEXUS network reaches
+                            10 million active users
+                        </h3>
+
+                        <p>
+                            The digital ecosystem continues
+                            its unprecedented growth.
+                        </p>
+
+                        <small>
+                            12 minutes ago
+                        </small>
+
+                    </article>
+
+
+                    <article class="news-card">
+
+                        <span>
+                            TECHNOLOGY
+                        </span>
+
+                        <h3>
+                            Quantum networking
+                            enters a new era
+                        </h3>
+
+                        <small>
+                            34 minutes ago
+                        </small>
+
+                    </article>
+
+
+                    <article class="news-card">
+
+                        <span>
+                            CYBER
+                        </span>
+
+                        <h3>
+                            New encryption protocol
+                            deployed globally
+                        </h3>
+
+                        <small>
+                            1 hour ago
+                        </small>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAIL -->
+
+            <div
+                class="page"
+                id="mail"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS MAIL
+                    </p>
+
+                    <h2>
+                        Your secure inbox.
+                    </h2>
+
+                </div>
+
+
+                <div class="mail-layout">
+
+                    <div class="mail-list">
+
+                        <button class="mail-item unread">
+
+                            <strong>
+                                NEXUS Security
+                            </strong>
+
+                            <span>
+                                New login detected
+                            </span>
+
+                            <small>
+                                2m
+                            </small>
+
+                        </button>
+
+
+                        <button class="mail-item unread">
+
+                            <strong>
+                                NEXUS Market
+                            </strong>
+
+                            <span>
+                                Your order is ready
+                            </span>
+
+                            <small>
+                                1h
+                            </small>
+
+                        </button>
+
+
+                        <button class="mail-item">
+
+                            <strong>
+                                Alex
+                            </strong>
+
+                            <span>
+                                Hey, are you online?
+                            </span>
+
+                            <small>
+                                3h
+                            </small>
+
+                        </button>
+
+                    </div>
+
+                    <div class="mail-view">
+
+                        <div class="mail-placeholder">
+                            Select a message
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CLOUD -->
+
+            <div
+                class="page"
+                id="cloud"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS CLOUD
+                    </p>
+
+                    <h2>
+                        Your files. Everywhere.
+                    </h2>
+
+                </div>
+
+
+                <div class="storage">
+
+                    <div class="storage-info">
+
+                        <span>
+                            STORAGE
+                        </span>
+
+                        <strong>
+                            12.4 GB / 100 GB
+                        </strong>
+
+                    </div>
+
+                    <div class="storage-bar">
+                        <div></div>
+                    </div>
+
+                </div>
+
+
+                <div class="file-grid">
+
+                    <div class="file-card">
+                        <strong>📁</strong>
+                        <span>Projects</span>
+                        <small>24 files</small>
+                    </div>
+
+                    <div class="file-card">
+                        <strong>📁</strong>
+                        <span>Images</span>
+                        <small>142 files</small>
+                    </div>
+
+                    <div class="file-card">
+                        <strong>📁</strong>
+                        <span>Documents</span>
+                        <small>38 files</small>
+                    </div>
+
+                    <div class="file-card">
+                        <strong>📄</strong>
+                        <span>nexus.txt</span>
+                        <small>2.4 KB</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- WALLET -->
+
+            <div
+                class="page"
+                id="wallet"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS WALLET
+                    </p>
+
+                    <h2>
+                        Digital assets.
+                    </h2>
+
+                </div>
+
+
+                <div class="wallet-card">
+
+                    <small>
+                        TOTAL BALANCE
+                    </small>
+
+                    <strong>
+                        $24,891.42
+                    </strong>
+
+                    <span>
+                        +8.42% this month
+                    </span>
+
+                </div>
+
+
+                <div class="asset-list">
+
+                    <div class="asset">
+
+                        <span class="coin cyan">
+                            ₿
+                        </span>
+
+                        <div>
+                            <strong>
+                                NEXUS BTC
+                            </strong>
+
+                            <small>
+                                0.2841 BTC
+                            </small>
+                        </div>
+
+                        <strong>
+                            $18,421
+                        </strong>
+
+                    </div>
+
+
+                    <div class="asset">
+
+                        <span class="coin purple">
+                            Ξ
+                        </span>
+
+                        <div>
+                            <strong>
+                                NEXUS ETH
+                            </strong>
+
+                            <small>
+                                1.84 ETH
+                            </small>
+                        </div>
+
+                        <strong>
+                            $4,921
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MARKET -->
+
+            <div
+                class="page"
+                id="market"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        NEXUS MARKET
+                    </p>
+
+                    <h2>
+                        Digital marketplace.
+                    </h2>
+
+                </div>
+
+
+                <div class="market-grid">
+
+                    <div class="product">
+
+                        <div class="product-image">
+                            ◈
+                        </div>
+
+                        <h3>
+                            CYBER PACK
+                        </h3>
+
+                        <p>
+                            Premium digital assets
+                        </p>
+
+                        <strong>
+                            $29.99
+                        </strong>
+
+                        <button onclick="buyProduct(this)">
+                            BUY NOW
+                        </button>
+
+                    </div>
+
+
+                    <div class="product">
+
+                        <div class="product-image purple">
+                            ◎
+                        </div>
+
+                        <h3>
+                            NEXUS AVATAR
+                        </h3>
+
+                        <p>
+                            Legendary identity
+                        </p>
+
+                        <strong>
+                            $49.99
+                        </strong>
+
+                        <button onclick="buyProduct(this)">
+                            BUY NOW
+                        </button>
+
+                    </div>
+
+
+                    <div class="product">
+
+                        <div class="product-image green">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            NEURAL BOOST
+                        </h3>
+
+                        <p>
+                            Exclusive upgrade
+                        </p>
+
+                        <strong>
+                            $19.99
+                        </strong>
+
+                        <button onclick="buyProduct(this)">
+                            BUY NOW
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SETTINGS -->
+
+            <div
+                class="page"
+                id="settings"
+            >
+
+                <div class="page-title">
+
+                    <p>
+                        SYSTEM
+                    </p>
+
+                    <h2>
+                        NEXUS configuration.
+                    </h2>
+
+                </div>
+
+
+                <div class="settings-list">
+
+                    <div class="setting">
+
+                        <div>
+                            <strong>
+                                Cyber Mode
+                            </strong>
+
+                            <small>
+                                Enable futuristic visual effects
+                            </small>
+                        </div>
+
+                        <button
+                            class="toggle active"
+                            onclick="toggleSetting(this)"
+                        >
+                            ON
+                        </button>
+
+                    </div>
+
+
+                    <div class="setting">
+
+                        <div>
+                            <strong>
+                                Scanlines
+                            </strong>
+
+                            <small>
+                                CRT display effect
+                            </small>
+                        </div>
+
+                        <button
+                            class="toggle active"
+                            onclick="toggleScanlines(this)"
+                        >
+                            ON
+                        </button>
+
+                    </div>
+
+
+                    <div class="setting">
+
+                        <div>
+                            <strong>
+                                Notifications
+                            </strong>
+
+                            <small>
+                                Network notifications
+                            </small>
+                        </div>
+
+                        <button
+                            class="toggle active"
+                            onclick="toggleSetting(this)"
+                        >
+                            ON
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- NOTIFICATION -->
+
+        <div
+            id="notification"
+            class="notification"
+        >
+
+            <strong>
+                NEXUS
+            </strong>
+
+            <p>
+                Welcome to the network.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <script src="java.js"></script>
+
+</body>
+</html>
